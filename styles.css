@@ -138,9 +138,9 @@ body.dark-mode {
 /* ///ADD/// Navigation Styles */
 header {
   padding: calc(var(--gutter) * 1.25);
-  background: rgba(29,53,87,0.95); /* darker background */
+  background: rgba(29,53,87,0.95);
   border-bottom: 1px solid rgba(0,0,0,0.1);
-  color: var(--watchdog-white); /* ensures text inside is visible */
+  color: #F1FAEE;
   position: sticky;
   top: 0;
   z-index: 900;
@@ -151,7 +151,7 @@ header {
 }
 
 header a {
-  color: var(--watchdog-white);
+  color: #F1FAEE;
   transition: color 0.25s ease;
 }
 header a:hover,
@@ -175,7 +175,7 @@ h1 {
 }
 
 body.light-mode .tagline {
-  color: var(--blue-bulletin);
+  color: var(--story-subtitle);
 }
 body.dark-mode .tagline {
   color: var(--story-subtitle);
