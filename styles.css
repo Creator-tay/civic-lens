@@ -73,7 +73,7 @@ button, input, select, textarea {
 /* Manual Light/Dark Mode Styles*/
 body.light-mode {
   background-color: var(--watchdog-white);
-  color: var(--truth-text);
+  color: #333;
 }
 body.dark-mode {
   background-color: #0f1720;
