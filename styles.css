@@ -71,6 +71,7 @@ button, input, select, textarea {
   --radius: 8px;
   --nav-height: 56px;
   --heading-color: var(--watchdog-white);
+  --nav-link-color: var(--watchdog-white);
 }
 
 /* Manual Light/Dark Mode Styles*/
@@ -82,6 +83,7 @@ body.light-mode {
   --blue-bulletin: #1D3557;
   --story-subtitle: #457B9D;
   --heading-color: var(--blue-bulletin);
+  --nav-link-color: var(--watchdog-white);
 }
 
 body.light-mode header h1,
@@ -97,6 +99,7 @@ body.dark-mode {
   --blue-bulletin: #8fb3d6;
   --story-subtitle: #9ec1d8;
   --heading-color: var(--watchdog-white);
+  --nav-link-color: var(--watchdog-white);
 }
 
 #theme-toggle {
@@ -154,7 +157,7 @@ header {
 }
 
 header a {
-  color: #F1FAEE;
+  color: var(--nav-link-color);
   transition: color 0.25s ease;
 }
 header a:hover,
@@ -163,11 +166,11 @@ header a:focus {
 }
 
 h1 {
+  color: var(--heading-color);
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.05;
-  color: var(--heading-color);
   transition: color 0.25s ease;
 }
 
