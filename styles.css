@@ -164,7 +164,7 @@ h1 {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.05;
-  color: var(--watchdog-white);
+  color: #F1FAEE;
   transition: color 0.25s ease;
 }
 
@@ -191,7 +191,7 @@ _
   display: inline-block;
   padding: 0.4rem 0.6rem;
   background: var(--blue-bulletin);
-  color: var(--watchdog-white);
+  color: #F1FAEE;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
