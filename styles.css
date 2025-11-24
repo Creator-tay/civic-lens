@@ -86,7 +86,7 @@ body.light-mode {
 
 body.light-mode header h1,
 body.light-mode header a {
-  color: var(--blue-bulletin);
+  color: var(--watchdog-white);
 }
 
 body.dark-mode {
