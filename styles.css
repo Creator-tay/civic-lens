@@ -180,7 +180,7 @@ body.light-mode .tagline {
 body.dark-mode .tagline {
   color: var(--story-subtitle);
 }
-
+_
 .mobile-nav {
   display: flex;
   align-items: center;
