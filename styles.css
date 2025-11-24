@@ -164,7 +164,7 @@ h1 {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.05;
-  color: #F1FAEE;
+  color: var(--watchdog-white);
   transition: color 0.25s ease;
 }
 
