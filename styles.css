@@ -1,10 +1,57 @@
-/* CSS by ///ADD/// YOUR NAME */
+/* CSS by Taylor Nava */
 
 /* Imported Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 /* ///ADD/// CSS Reset */
+:root { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: var(--font-body);
+}
 
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-body);
+  background: var(--watchdog-white);
+  color: var(--truth-text);
+  min-height: 100vh;
+}
+
+ol, ul { list-style: none; }
+
+a { color: inherit; text-decoration: underline; transition: var(--transition); }
+a:focus, a:hover { text-decoration-thickness: 2px; }
+
+img, video { max-width: 100%; height: auto; display: block; }
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
 
 /* Root Variables */
 :root {
@@ -17,6 +64,10 @@
   --font-heading: 'Merriweather', serif;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
   --transition: all 0.5s ease;
+  --container-max: 1100px;
+  --gutter: 1rem;
+  --radius: 8px;
+  --nav-height: 56px;
 }
 
 /* Manual Light/Dark Mode Styles*/
@@ -36,30 +87,274 @@ body.dark-mode {
   border: 1px solid var(--blue-bulletin);
   border-radius: 1.5rem;
   cursor: pointer;
+  padding: 0.25rem;
+  width: 44px;
+  height:44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+#theme-toggle:focus {
+  outline: 3px solid rgba(29,53,87,0.15);
+  transform: scale(1.03);
 }
 
 /* ///ADD/// Skip Link Styles */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  border-radius: 4px;
+  transition: left 0.18s ease;
+  font-weight: 600;
+  text-decoration: none;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
 
 /* ///ADD/// Navigation Styles */
+header {
+  padding: calc(var(--gutter) * 1.25);
+  background: linear-gradient(180deg, rgba(29,53,87,0.03), transparent);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.05;
+  color: var(--blue-bulletin);
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: var(--story-subtitle);
+  margin-top: 0.25rem;
+}
+
+.mobile-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.menu-button {
+  display: inline-block;
+  padding: 0.4rem 0.6rem;
+  background: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  user-select: none;
+}
+.menu-button:focus {
+  outline: 3px solid rgba(29,53,87,0.12);
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: calc(var(--nav-height) + 0.5rem);
+  background: var(--watchdog-white);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  min-width: 200px;
+  padding: 0.5rem;
+}
+.menu li { margin: 0.25rem 0; }
+.menu a {
+  display: block;
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+}
+.menu a:focus, .menu a:hover {
+  background: rgba(29,53,87,0.04);
+}
 
 /* ///ADD/// Global Layout Styles */
-
 /* ///ADD/// Global Text Styles */
+.container {
+  width: calc(100% - 2 * var(--gutter));
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 1rem var(--gutter);
+}
 
+main {
+  padding: 1.25rem var(--gutter);
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+.section__header { margin-bottom: 1rem; }
+
+article {
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  color: var(--blue-bulletin);
+  margin-bottom: 0.5rem;
+}
+h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--truth-text);
+}
+p {
+  color: inherit;
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+.form-group { margin-bottom: 0.75rem; }
+label { display: block; font-weight: 600; margin-bottom: 0.25rem; font-size: 0.92rem; }
+input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 6px;
+  background: transparent;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--blue-bulletin);
+  box-shadow: 0 0 0 3px rgba(29,53,87,0.06);
+}
+
+button[type="submit"], .button {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  background: var(--news-flash);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+}
+button[type="submit"]:focus { outline: 3px solid rgba(230,57,70,0.12); }
+
+footer {
+  border-top: 1px solid rgba(0,0,0,0.04);
+  padding: 1.25rem;
+  text-align: center;
+  background: linear-gradient(0deg, rgba(29,53,87,0.02), transparent);
+}
 
 /* ///ADD/// medium styles 620px */
+@media (min-width: 620px) {
+  header {
+    padding: calc(var(--gutter) * 1.5);
+  }
 
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  .menu {
+    right: 2rem;
+  }
+}
 
 /* ///ADD/// large styles 920px */
+@media (min-width: 920px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
 
+  .menu {
+    position: static;
+    display: flex;
+    gap: 1rem;
+    min-width: auto;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    border: none;
+  }
+  .menu li { margin: 0; }
+  .menu a { padding: 0.25rem 0.5rem; }
+
+  .menu-button { display: none; }
+}
 
 /* ///ADD/// x-large styles 1024px */
-
+@media (min-width: 1024px) {
+  :root { --container-max: 1280px; }
+  main { padding: 2rem var(--gutter); }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.125rem; }
+}
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --watchdog-white: #0f1720; /* darker bg */
+    --truth-text: #e6eef3;
+    --blue-bulletin: #8fb3d6;
+    --story-subtitle: #9ec1d8;
+  }
+  body { background: var(--watchdog-white); color: var(--truth-text); }
+  #theme-toggle { background: var(--truth-text); color: var(--watchdog-white); }
+}
 
+@media (prefers-color-scheme: light) {
+  /* keep defaults — but could tweak accents if desired */
+}
 
-/* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
+/* prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  :root { --transition: none; }
+  * { transition: none !important; animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
+}
+
 @supports (selector(:has(*))) {
+  /* when header (or nav) has a checked input, show the menu */
+  /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
+ header:has(#menu-toggle:checked) .menu,
+ .mobile-nav:has(#menu-toggle:checked) .menu {
+    display: block;
+  }
+}
 
+#menu-toggle:checked ~ .menu {
+  display: block;
+}
+
+.u-visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
 }
