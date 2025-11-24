@@ -76,7 +76,7 @@ body.light-mode {
   color: var(--truth-text);
 }
 body.dark-mode {
-  background-color: var(--truth-text);
+  background-color: #0f1720;
   color: var(--watchdog-white);
 }
 #theme-toggle {
