@@ -76,22 +76,29 @@ button, input, select, textarea {
 body.light-mode {
   --bg-color: #F1FAEE;
   --text-color: #333;
+  --watchdog-white: #F1FAEE;
+  --truth-text: #333;
+  --blue-bulletin: #1D3557;
+  --story-subtitle: #457B9D;
 }
 body.dark-mode {
   --bg-color: #0f1720;
-  --text-color:#e6eef3;
+  --text-color: #e6eef3;
+  --watchdog-white: #0f1720;
+  --truth-text: #e6eef3;
+  --blue-bulletin: #8fb3d6;
+  --story-subtitle: #9ec1d8;
 }
+
 #theme-toggle {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
   background-color: var(--watchdog-white);
+  color: var(--text-color);
   border: 1px solid var(--blue-bulletin);
   border-radius: 1.5rem;
   cursor: pointer;
   padding: 0.25rem;
   width: 44px;
-  height:44px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -330,14 +337,6 @@ footer {
   }
   body { background: var(--watchdog-white); color: var(--truth-text); }
   #theme-toggle { background: var(--truth-text); color: var(--watchdog-white); }
-}
-
-@media (prefers-color-scheme: light) {
-}
-
-@media (prefers-reduced-motion: reduce) {
-  :root { --transition: none; }
-  * { transition: none !important; animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
 }
 
 @supports (selector(:has(*))) {
