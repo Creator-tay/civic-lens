@@ -132,8 +132,9 @@ body.dark-mode {
 /* ///ADD/// Navigation Styles */
 header {
   padding: calc(var(--gutter) * 1.25);
-  background: linear-gradient(180deg, rgba(29,53,87,0.03), transparent);
-  border-bottom: 1px solid rgba(0,0,0,0.04);
+  background: rgba(29,53,87,0.95); /* darker background */
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  color: var(--watchdog-white); /* ensures text inside is visible */
   position: sticky;
   top: 0;
   z-index: 900;
