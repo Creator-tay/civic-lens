@@ -81,6 +81,12 @@ body.light-mode {
   --blue-bulletin: #1D3557;
   --story-subtitle: #457B9D;
 }
+
+body.light-mode header h1,
+body.light-mode header a {
+  color: var(--blue-bulletin);
+}
+
 body.dark-mode {
   --bg-color: #0f1720;
   --text-color: #e6eef3;
@@ -146,6 +152,11 @@ header {
 
 header a {
   color: var(--watchdog-white);
+  transition: color 0.25s ease;
+}
+header a:hover,
+header a:focus {
+  color: var(--story-subtitle);
 }
 
 h1 {
@@ -153,7 +164,8 @@ h1 {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.05;
-  color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  transition: color 0.25s ease;
 }
 
 .tagline {
