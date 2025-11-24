@@ -339,6 +339,30 @@ footer {
   #theme-toggle { background: var(--truth-text); color: var(--watchdog-white); }
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #F1FAEE;
+    --text-color: #333;
+    --watchdog-white: #F1FAEE;
+    --truth-text: #333;
+    --blue-bulletin: #1D3557;
+    --story-subtitle: #457B9D;
+  }
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  #theme-toggle {
+    background-color: var(--watchdog-white);
+    color: var(--text-color);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --transition: none; }
+  * { transition: none !important; animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
+}
+
 @supports (selector(:has(*))) {
  header:has(#menu-toggle:checked) .menu,
  .mobile-nav:has(#menu-toggle:checked) .menu {
