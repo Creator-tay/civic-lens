@@ -32,6 +32,8 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -55,6 +57,8 @@ button, input, select, textarea {
 
 /* Root Variables */
 :root {
+  --bg-color: #F1FAEE;
+  --text-color: #333;
   --blue-bulletin: #1D3557;
   --news-flash: #E63946;
   --watchdog-white: #F1FAEE;
@@ -72,12 +76,12 @@ button, input, select, textarea {
 
 /* Manual Light/Dark Mode Styles*/
 body.light-mode {
-  background-color: var(--watchdog-white);
-  color: #333;
+  --background-color: #F1FAEE;
+  --text-color: #333;
 }
 body.dark-mode {
-  background-color: #0f1720;
-  color: var(--watchdog-white);
+  --background-color: #0f1720;
+  --text-color:#e6eef3;
 }
 #theme-toggle {
   position: absolute;
@@ -319,7 +323,9 @@ footer {
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
 @media (prefers-color-scheme: dark) {
   :root {
-    --watchdog-white: #0f1720; /* darker bg */
+    --bg-color: #0f1720;
+    --text-color: #e6eef3;
+    --watchdog-white: #0f1720;
     --truth-text: #e6eef3;
     --blue-bulletin: #8fb3d6;
     --story-subtitle: #9ec1d8;
