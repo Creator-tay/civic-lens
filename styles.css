@@ -70,6 +70,7 @@ button, input, select, textarea {
   --gutter: 1rem;
   --radius: 8px;
   --nav-height: 56px;
+  --heading-color: var(--watchdog-white);
 }
 
 /* Manual Light/Dark Mode Styles*/
@@ -80,6 +81,7 @@ body.light-mode {
   --truth-text: #333;
   --blue-bulletin: #1D3557;
   --story-subtitle: #457B9D;
+  --heading-color: var(--blue-bulletin);
 }
 
 body.light-mode header h1,
@@ -94,6 +96,7 @@ body.dark-mode {
   --truth-text: #e6eef3;
   --blue-bulletin: #8fb3d6;
   --story-subtitle: #9ec1d8;
+  --heading-color: var(--watchdog-white);
 }
 
 #theme-toggle {
@@ -164,7 +167,7 @@ h1 {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.05;
-  color: var(--watchdog-white);
+  color: var(--heading-color);
   transition: color 0.25s ease;
 }
 
