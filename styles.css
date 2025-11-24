@@ -335,8 +335,16 @@ footer {
     --blue-bulletin: #8fb3d6;
     --story-subtitle: #9ec1d8;
   }
-  body { background: var(--watchdog-white); color: var(--truth-text); }
-  #theme-toggle { background: var(--truth-text); color: var(--watchdog-white); }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  #theme-toggle {
+    background-color: var(--watchdog-white);
+    color: var(--text-color);
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -348,10 +356,12 @@ footer {
     --blue-bulletin: #1D3557;
     --story-subtitle: #457B9D;
   }
+
   body {
     background-color: var(--bg-color);
     color: var(--text-color);
   }
+
   #theme-toggle {
     background-color: var(--watchdog-white);
     color: var(--text-color);
